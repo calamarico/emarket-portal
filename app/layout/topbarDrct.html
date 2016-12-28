@@ -1,0 +1,46 @@
+<!-- Start header-left -->
+<div class="header-left">
+    <div class="topnav">
+        <button class="menutoggle" type="button" data-ng-click="toggleSidebar()"><span class="menu__handle"><span>Menu</span></span></button>
+
+        <p class="h2" data-ng-bind="'mainTitle' | i18next"></p>
+    </div>
+</div>
+<!-- End header-left -->
+
+<!-- Start header-right -->
+<div class="header-right">
+    <ul class="header-menu nav navbar-nav">
+        <li>
+            <a data-target="#" id="user-header">
+                <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+                <span data-ng-bind="user.username"></span>
+                <span data-ng-bind="'(' + tenantName + ')'" class="secondary-info"></span>
+            </a>
+        </li>
+        <li class="dropdown" id="language-header">
+            <div class="header-menu-item" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <i class="glyphicon glyphicon-globe"></i>
+                <span data-ng-bind="'languages.title' | i18next"></span>
+            </div>
+            <ul class="dropdown-menu">
+                <li>
+                    <a data-target="#" data-lang="en" data-ng-click="$root.changeLanguage('en-US')"><img src="../assets/images/flags/usa.png" alt="flag-english"> <span data-ng-bind="'languages.english' | i18next"></span></a>
+                </li>
+                <li>
+                    <a data-target="#" data-lang="es" data-ng-click="$root.changeLanguage('es-ES')"><img src="../assets/images/flags/spanish.png" alt="flag-spanish"> <span data-ng-bind="'languages.spanish' | i18next"></span></a>
+                </li>
+                <li>
+                    <a data-target="#" data-lang="pt" data-ng-click="$root.changeLanguage('pt-BR')"><img src="../assets/images/flags/Brazil.png" alt="flag-brazil"> <span data-ng-bind="'languages.brazilian' | i18next"></span></a>
+                </li>
+            </ul>
+        </li>
+        <li class="separator"></li>
+        <li>
+            <a href="#" data-target="#" data-ng-click="logout()" id="logout-header">
+                <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- End header-right -->

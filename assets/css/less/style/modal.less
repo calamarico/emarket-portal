@@ -1,0 +1,50 @@
+.modal-dialog {
+    z-index: 1100;
+}
+
+.modal-header-error {
+	background-color: #d2322d;
+
+	> h4, > span {
+		color: white;
+	}
+
+	> h4 {
+		display: inline;
+		padding-left: 6px;
+	}
+}
+
+.modal-header-notify {
+	background-color: #eeeeee;
+
+	> h4, > span {
+		color: #3a87ad;
+	}
+	> h4 {
+		display: inline;
+		padding-left: 6px;
+	}
+}
+
+.modal-header-event {
+	background-color: @font-color-brand;
+	text-align: center;
+
+	> h4 {
+		color: white;
+		display: inline;
+	}
+}
+
+.modal-body {
+	> p {
+		font-family: @font-text-regular;
+		font-size: 18px;
+		text-align: center;
+	}
+
+    textarea {
+        resize: none;
+    }
+}

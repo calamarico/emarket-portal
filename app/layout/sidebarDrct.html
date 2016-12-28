@@ -1,0 +1,46 @@
+<!-- Start logopanel -->
+<div class="logopanel">
+    <h1>
+        <a href="#/" title="{{ 'mainTitle' | i18next }}">
+            <img src="../assets/images/logo/telefonica.png" alt="Main Logo">
+        </a>
+    </h1>
+</div>
+<!-- End logopanel -->
+
+<!-- Start sidebar-inner -->
+<div class="sidebar-inner">
+    <ul class="nav nav-sidebar">
+        <li data-ng-class="{ active  : isActive('/')}">
+            <a href="#/">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span data-ng-bind="'dashboard' | i18next"></span>
+            </a>
+        </li>
+        <li data-ng-class="{ active  : isActive('/alerts')}">
+            <a href="#alerts">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                <span data-ng-bind="'alerts' | i18next"></span>
+            </a>
+        </li>
+        <li data-ng-class="{ active  : isActive('/events')}">
+            <a href="#events">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span data-ng-bind="'events' | i18next"></span>
+            </a>
+        </li>
+        <li data-ng-class="{ active  : isActive('/computers')}">
+            <a href="#computers">
+                <i class="fa fa-server" aria-hidden="true"></i>
+                <span data-ng-bind="'computers' | i18next"></span>
+            </a>
+        </li>
+        <li data-ng-class="{ active  : isActive('/policies')}">
+            <a href="#policies">
+                <i class="fa  fa-file-text-o" aria-hidden="true"></i>
+                <span data-ng-bind="'policies' | i18next"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- End sidebar-inner -->

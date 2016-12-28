@@ -1,0 +1,29 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-header-notify">
+                <button type="button"
+                    class="close"
+                    data-ng-click="dismissModal(false)"
+                    data-dismiss="modal"
+                    aria-hidden="true">
+                        &times;
+                </button>
+                <span class="glyphicon glyphicon-info-sign"></span>
+                <h4 class="modal-title" data-ng-bind="'modal.notifyTitle' | i18next"></h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-info" data-ng-bind="textMsg"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                    class="btn btn-primary"
+                    data-ng-click="dismissModal(false)"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                    data-ng-bind="'modal.closeButton' | i18next">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

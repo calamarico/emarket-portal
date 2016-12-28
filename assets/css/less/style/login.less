@@ -1,0 +1,138 @@
+.login-page {
+    background: @account-color-dark;
+    background: rgb(31, 54, 73);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(31, 54, 73, 1) 0%, rgba(23, 37, 61, 1) 44%, rgba(4, 13, 17, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(31, 54, 73, 1)), color-stop(44%, rgba(23, 37, 61, 1)), color-stop(100%, rgba(4, 13, 17, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(31, 54, 73, 1) 0%, rgba(23, 37, 61, 1) 44%, rgba(4, 13, 17, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(31, 54, 73, 1) 0%, rgba(23, 37, 61, 1) 44%, rgba(4, 13, 17, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(31, 54, 73, 1) 0%, rgba(23, 37, 61, 1) 44%, rgba(4, 13, 17, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(31, 54, 73, 1) 0%, rgba(23, 37, 61, 1) 44%, rgba(4, 13, 17, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@account-color-dark', endColorstr='#040d11', GradientType=1);
+}
+
+/****  Login Page, Sign Up Page, Password Recover Page, Lockscreen Page  ****/
+.login-section {
+
+    #language-header{
+        margin-top: 15px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    footer {
+        border-top: 1px solid @gray-light;
+        text-align: right;
+        margin-top: 15px;
+        padding-top: 10px;
+
+        a {
+            margin-right: 10px;
+        }
+    }
+
+    ul {
+
+        &.dropdown-menu {
+            left: -30px;
+        }
+    }
+
+    i.glyphicon-globe {
+        top: 2px !important;
+    }
+
+    .account-form {
+        background: @account-color-light;
+        display: block;
+        padding: 30px;
+        position: relative;
+        padding-bottom: 20px;
+        overflow: hidden;
+        margin-top: 20px;
+
+        .form-control {
+            border-color: @blue-06;
+        }
+        .form-group {
+            input[name="name"],
+            input[name="password"]{
+                padding-left: 25px;
+            }
+
+            .glyphicon {
+                width: 25px;
+                height: 25px;
+                float: left;
+                margin-top: -33px;
+
+                &.vdc-user{
+                    background: transparent url(../../images/icons/login.png) 0 3px no-repeat;
+                }
+                &.vdc-password{
+                    background: transparent url(../../images/icons/candado.png) 0 3px no-repeat;
+                }
+            }
+        }
+
+        .append-icon {
+            position: relative;
+
+            i {
+                color: rgba(27, 30, 37, 0.3);
+                font-size: 14px;
+                height: 34px;
+                left: auto;
+                line-height: 34px;
+                position: absolute;
+                right: 0;
+                text-align: center;
+                top: 0;
+                width: 36px;
+            }
+        }
+
+        #loginFormSubmit {
+            background-color: @blue-10;
+            color: @white;
+
+            .pull-right();
+
+            &:hover{
+                background-color: lighten(@blue-10, 10%);;
+            }
+        }
+
+        a {
+            color: #A7A7A7;
+
+            &:hover {
+                color: #838383;
+            }
+        }
+
+        /*title*/
+        h3{
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media (min-width: 768px) {
+
+    .login-section {
+
+        .container {
+            height: 100%;
+            margin: auto;
+            position: relative;
+            width: 550px;
+        }
+    }
+}

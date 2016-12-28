@@ -1,0 +1,161 @@
+/**
+ * HTML frames:
+ * <article class="layout-table">
+ *     <header>
+ *         <nav class="first-header">
+ *             <!-- optional searchbox -->
+ *             <div class="input-group search">
+ *                 <input type="text" class="form-control" data-ng-model="searchKeyword">
+ *                 <span class="input-group-addon glyphicon glyphicon-search"></span>
+ *             </div>
+ *             <h3 class="title-node">TITLE</h3>
+ *         </nav>
+ *         <nav class="second-header">
+ *             <button disabled="true">
+ *                 <i class="glyphicon glyphicon-new-window"></i>
+ *                 Action 1
+ *             </button>
+ *             <button>
+ *                 <i class="glyphicon glyphicon-export"></i>
+ *                 Action 1
+ *             </button>
+ *         </nav>
+ *     </header>
+ *     <table data-ng-table="tableParams" class="my-table">
+ *         <thead>
+ *             <tr>
+ *                 <th data-ng-repeat="column in columnsData" data-ng-show="column.show">
+ *                     {{column.label}}
+ *                 </th>
+ *             </tr>
+ *         </thead>
+ *         <tbody>
+ *             <tr data-ng-repeat="item in $data | filter: searchKeyword">
+ *                 <td data-ng-repeat="column in columnsData" data-ng-show="column.show">
+ *                     {{item[column.valueName]}}
+ *                 </td>
+ *             </tr>
+ *         </tbody>
+ *     </table>
+ * </article>
+ */
+.layout-table{
+    .first-header {
+        background-color: #fff;
+        height: @layout-table-header1-height;
+        padding: 5px 10px;
+        .input-group.search {
+            float: right;
+            width: 200px;
+            input {
+                height: 25px;
+                padding-right: 24px;
+            }
+            .input-group-addon {
+                border: 0;
+                background: none;
+                color: #ccc;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+                padding:0;
+                width: 20px;
+                z-index: 10;
+            }
+        }
+        .title-node{
+            font-size: 1,1em;
+            font-weight: bold;
+            line-height: 25px;
+        }
+    }
+
+    .second-header {
+        background-color: @background-01;
+        align-items: center;
+        border: 1px solid @gray-light;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+        display: flex;
+        height: @layout-table-header2-height;
+        padding: 0 5px;
+
+        button {
+            border: 0;
+            background-color: transparent;
+            border: 1px solid @background-01;
+
+            &[disabled] {
+                opacity: 0.5;
+                &:hover{
+                    border-color: @background-01;
+                }
+            }
+
+            &:hover {
+                border-color: @gray-light;
+            }
+        }
+    }
+
+    //Add scroll
+    .layout-table-content{
+        height: calc(100% - @layout-table-header1-height - @layout-table-header2-height - @layout-table-footer-height);
+        overflow: auto;
+    }
+
+    .ng-table{
+        table {
+            min-width: 100%;
+        }
+
+        th {
+            #gradient > .vertical(#fff; #dceae6);
+            font: normal 100 14px @font-text-regular;
+            height: 40px;
+            padding: 0 20px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        td {
+            background-color: @column-background;
+            border-bottom: 1px solid @column-border;
+            font-family: @font-default;
+            font-size: 12px;
+            padding: 15px 20px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        tr {
+            > td:first-child {
+                background-color: @first-column-background;
+            }
+
+            &.selected {
+                td {
+                    background-color: @background-02;
+                }
+                > td:first-child {
+                    background-color: @background-04;
+                }
+            }
+        }
+    }
+    .ng-table-pager {
+        background-color: #f5f5f5;
+        padding: 5px;
+        border: 1px solid #b5b5b5;
+        border-left: 0;
+        border-right: 0;
+        height: @layout-table-footer-height;
+
+        .pagination{
+            margin: 0;
+            font-size: 0.7em;
+            float: right;
+        }
+    }
+}

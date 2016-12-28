@@ -1,0 +1,120 @@
+/**
+ * html frames:
+ * <div class="main-section layout-two-columns">
+ *     <h3 class="title">My title</h3>
+ *     <section class="left-panel" data-ng-class="{ 'close': panelCollapsed }">
+ *         <!-- optional toogle button -->
+ *         <div class="panel-toggle" data-ng-click="togglePanel()">
+ *              <i class="glyphicon glyphicon"
+ *                  data-ng-class="{'glyphicon-list':panelCollapsed, 'glyphicon-eye-close': !panelCollapsed}"
+ *                  ></i>
+ *          </div>
+ *         <article>
+ *             <div class="section-body"></div>
+ *         </article>
+ *     </section>
+ *     <section class="right-panel" data-table-pagination-drct>
+ *         <article>
+ *             <header></header>
+ *             <div class="section-body"></div>
+ *         </article>
+ *     </section>
+ * </div>
+ */
+
+.layout-two-columns {
+    height: 100%;
+    position: relative;
+
+    .breadcrumb-computers {
+        display: flex;
+        height: 47px;
+
+        > .title {
+            cursor: pointer;
+            margin-left: 10px;
+            font-family: @font-text-regular;
+            font-size: 30px;
+            color: black;
+            padding-top: 10px;
+
+            &:nth-child(2) {
+                width: 100%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                color: #707070;
+            }
+
+            &.active {
+                cursor: default;
+            }
+        }
+
+        > .divider:before {
+            margin-right: 10px;
+            content: '/';
+            color: black;
+            cursor: default;
+        }
+    }
+
+    & > .left-panel,
+    & > .right-panel {
+        bottom: 5px;
+        position: absolute;
+        top: @topbar-panel-height;
+        background-color: #fff;
+        border: 1px solid @gray;
+        .box-shadow(0 0 3px 0 rgba(0,0,0,0.74));
+    }
+
+    & > .left-panel{
+        left: 5px;
+        width: 295px;
+
+        &.close {
+            opacity: 1;
+            overflow: hidden;
+            width: 40px;
+            background: none;
+            border: 0;
+            .box-shadow(none);
+
+            .title-label,
+            .section-body {
+                display: none;
+            }
+
+            & ~ .right-panel {
+                left: 50px;
+            }
+        }
+    }
+    & > .right-panel{
+        left: 306px;
+        right: 5px;
+    }
+    .left-panel > article,
+    .right-panel > article {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .left-panel > article > .section-body,
+    .right-panel > article > .section-body{
+        width: 100%;
+        height: 100%;
+    }
+
+    .panel-toggle {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        z-index: 999;
+        width: 25px;
+        font-size: 15px;
+        color: #5B5B5B;
+        cursor: pointer;
+    }
+}
