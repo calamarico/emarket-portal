@@ -20,7 +20,6 @@
         data-ng-app="EApp"
         class="fixed-topbar fixed-sidebar theme-sdtl color-default"
         data-ng-controller="coreCtrl" data-ng-class="{
-            'login-page': !isLogged,
             'sidebar-collapsed': sidebarCollapsed,
             'sidebar-show': sidebarCollapsedResponsive
         }">
@@ -34,9 +33,7 @@
                 <div class="bounce3"></div>
             </div>
 
-            <section class="login-section" data-ng-if="!isLogged" login-drct></section>
-
-            <section id="app-wrap" class="content-section animate-section" data-ng-if="isLogged" layout-drct></section>
+            <section id="app-wrap" class="content-section animate-section" layout-drct></section>
 
                 <script src="/assets/libs/jquery/jquery-1.11.1.min.js"></script>
                 <script src="/assets/libs/angular/angular.js"></script>

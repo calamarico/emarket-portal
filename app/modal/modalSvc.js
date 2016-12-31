@@ -62,27 +62,9 @@ angular.module('EModal')
                 });
             }
 
-            function showModalEvent(section, event) {
-                $rootScope.$broadcast('spinnerOff');
-
-                return modalService.showModal({
-                    templateUrl: SECTIONS_TEMPLATES[section],
-                    controller: 'modalEventCtrl',
-                    inputs: {
-                        event: event
-                    }
-                }).then(function(modal) {
-                    modal.element.modal({
-                        backdrop: 'static',
-                        keyboard: false
-                    });
-                });
-            }
-
             return {
                 showModalError: showModalError,
-                showModalNotify: showModalNotify,
-                showModalEvent: showModalEvent
+                showModalNotify: showModalNotify
             };
         }
 ]);

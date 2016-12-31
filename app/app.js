@@ -11,10 +11,10 @@ var MakeApp = angular
         'ngTable',
         'angularModalService',
         'ui.bootstrap',
-        'VDCCore',
-        'VDCLayout',
-        'VDCDashboard',
-        'VDCModal'
+        'ECore',
+        'ELayout',
+        'EDashboard',
+        'EModal'
     ])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
@@ -33,9 +33,9 @@ var MakeApp = angular
         $i18nextProvider.options = {
             useCookie: true,
             useLocalStorage: false,
-            fallbackLng: ['en-US'],
+            fallbackLng: ['es-ES'],
             resGetPath: '../locales/__lng__.json',
-            lngWhitelist: ['en-US', 'pt-BR', 'es-ES'],
+            lngWhitelist: ['en-US', 'es-ES'],
             defaultLoadingValue: '' // default value showed while i18next is loading.
         };
     }]);

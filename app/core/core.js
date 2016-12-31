@@ -4,9 +4,7 @@ angular.module('ECore', [])
         es: 'es-ES',
         es_ES: 'es-ES',
         en: 'en-US',
-        en_US: 'en-US',
-        pt: 'pt-BR',
-        pt_BR: 'pt-BR'
+        en_US: 'en-US'
         /* jshint ignore:end */
     })
     .run([
@@ -16,10 +14,9 @@ angular.module('ECore', [])
         '$timeout',
         '$cookies',
         '$window',
-        'loginSvc',
         'LANGUAGES',
 
-        function($route, $rootScope, $i18next, $timeout, $cookies, $window, loginSvc, LANGUAGES) {
+        function($route, $rootScope, $i18next, $timeout, $cookies, $window, LANGUAGES) {
             /**
              * Change Language
              * Changes the UI language
@@ -39,37 +36,10 @@ angular.module('ECore', [])
                 }
             };
 
-            /**
-             * Adding Lodash to the scope
-             *
-             * @type    {object}
-             */
-            $rootScope._ = _;
-
             // Detect and set language.
             $rootScope.changeLanguage(
                 $cookies.get('i18next') ||
                 $window.navigator.language ||
                 $window.navigator.userLanguage);
-        }
-    ])
-    // Configure authentication
-    .run([
-        '$rootScope',
-        'authSvc',
-        function($rootScope, auth) {
-            /**
-             * Is Logged
-             *
-             * @type    {Boolean}
-             */
-            $rootScope.isLogged = false;
-
-            auth.autoLogin();
-            auth.onLogin(function() {
-                $rootScope.isLogged = auth.isLogged;
-            });
-
-            //@TODO configure interceptor
         }
     ]);
