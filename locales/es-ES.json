@@ -1,3 +1,19 @@
 {
-
+    "mainTitle": "IoT Management",
+    "languages": {
+        "title": "Language",
+        "spanish": "Spanish",
+        "english": "English",
+        "brazilian": "Brazilian"
+    },
+    "navigation": "Navigation",
+    "dashboard": "Dashboard",
+    "alerts": "Alerts",
+    "computers": "Computers",
+    "events": "Events",
+    "policies": "Policies",
+    "administration": "Administration",
+    "userLabel": "Hi, user",
+    "accountSettings": "Account Settings",
+    "logout": "Logout"
 }
